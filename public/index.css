@@ -1,0 +1,604 @@
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  color: black;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+}
+
+a {
+  color: white;
+}
+
+em {
+  font-weight: normal;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* modal window */
+.titleM {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-bottom: 30px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #f5f5f5;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid rgb(51, 58, 42);
+  width: 35%;
+  /* Could be more or less, depending on screen size */
+  color: black;
+  overflow: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+@media screen and (max-width: 800px) {
+  .modal-content {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1424px) {
+  .modal-content {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .modal-mobile {
+    width: 90%;
+  }
+}
+
+
+.btnAlert {
+  margin-top: 13px;
+  background-image: linear-gradient(-45deg, rgb(73, 82, 160), #222769);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.15rem;
+  border-radius: 5%;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: none;
+  padding: 0 6px 3px 6px;
+}
+
+.btnAlert:hover {
+  background-image: linear-gradient(45deg, rgb(73, 82, 160), #222769);
+}
+
+.btnSw {
+  margin: auto 8px;
+  background-image: linear-gradient(-45deg, rgb(89, 93, 133), #222769);
+  color: white;
+  font-size: 75%;
+  border-radius: 50%;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: none;
+}
+
+.btnStart {
+  padding: 11px 5.5px;
+  cursor: pointer;
+}
+
+.btnLap {
+  padding: 11px 9px;
+}
+
+.btnReset {
+  padding: 11px 3px;
+}
+
+.btnStop {
+  padding: 11px 6px;
+}
+
+.btnGo {
+  padding: 15px;
+  margin-top: 20px;
+  margin-left: 0;
+  font-size: 1.1rem;
+}
+
+.btnSw:hover {
+  background-image: linear-gradient(45deg, rgb(66, 69, 100), #222769);
+}
+
+.setClock {
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: black;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: right;
+  display: inline;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(133, 53, 53);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btnClose {
+  float: right;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.cont {
+  width: 10%;
+  margin: auto;
+}
+
+.display {
+  width: 75%;
+  font-size: 150%;
+  margin: 10px auto;
+}
+
+@media screen and (max-width: 1110px) {
+  .display {
+    width: 55%;
+    font-size: 100%;
+  }
+}
+
+.display2 {
+  width: 14%;
+  ;
+}
+
+@media screen and (max-width: 1077px) {
+  .display2 {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .display2 {
+    width: 25%;
+  }
+}
+
+.laps {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+/* timer */
+
+
+.timerButtonContainer{
+  padding: 0;
+  margin-bottom: 20px;
+}
+.countdownTimer {
+  text-align: center;
+}
+.countdownInput {
+  background-color: #f5f5f5;
+  text-align: center;
+  width: 65px;
+  font-size: 2.3rem;
+  border: none;
+}
+@media screen and (max-width: 440px){
+  .countdownInput{
+    font-size: 1.3rem;
+    width: 40px;
+  }
+
+}
+
+.spanCountd {
+  position: relative;
+  bottom: 3px;
+  font-size: 1.2rem;
+}
+
+.countButton {
+  border-radius: 50%;
+  padding: 11px;
+  font-size: 0.9rem;
+
+}
+.timerBs{
+  margin: 0 5px;
+
+}
+.resetB{
+  font-size: 0.8rem;
+  border-radius: 50%;
+  padding: 12px 4px;
+}
+.stopB{
+  font-size: 0.8rem;
+  border-radius: 50%;
+  padding: 12px 7px;
+}
+
+.iFrame {
+  /*   style="height: 650px; border: none;"
+ */
+  height: 650px;
+}
+
+.signUp {
+  height: 100%;
+  border: none;
+  width: 100%;
+}
+
+/* Navigation Bar */
+.navBar {
+  font-weight: normal;
+  background-color: #243157;
+  margin: 0 0 50px;
+}
+
+.nav-link:hover {
+  transition: all 0.5s;
+  color: rgb(68, 221, 175);
+}
+
+.navbar-toggler {
+  font-size: 1.6rem;
+  margin-top: 16px;
+  color: #00263B;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding: 15px 40px;
+}
+
+@media screen and (max-width: 1239px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding: 15px 20px;
+  }
+}
+
+.mr-auto, .mx-auto {
+  margin: auto;
+}
+
+/* Analog clock  */
+.clock {
+  text-align: center;
+  font-size: 2rem;
+  padding-bottom: 130px;
+}
+
+.analog-clock {
+  min-width: 420px;
+  max-width: 420px;
+  min-height: 360px;
+  max-height: 360px;
+}
+
+@media screen and (max-width: 421px) {
+  .analog-clock {
+    min-width: 310px;
+    max-width: 310px;
+    min-height: 310px;
+    max-height: 310px;
+  }
+.navbar{
+  padding:0;
+}
+}
+
+.digitalClock {
+  margin: auto;
+  text-align: center;
+  font-size: 2.2em;
+  font-family: 'Anton', sans-serif;
+}
+
+/* footer */
+#footer {
+  text-align: center;
+  background-color: #243157;
+  padding: 85px 0 35px 0;
+}
+
+.grids {
+  margin: 0 auto 10px;
+}
+
+.footera {
+  transition: all 0.5s;
+  color: black;
+}
+
+.bottomp {
+  font-size: 90%;
+  margin-top: 25px;
+  color: rgb(55, 115, 119);
+}
+
+.icon-cont {
+  padding-bottom: 50px;
+}
+
+.footericons {
+  transition: all 0.5s;
+  padding: 0 30px 0;
+  margin-bottom: 60px;
+  font-size: 1.5rem;
+  color: black;
+}
+
+@media screen and (max-width: 421px) {
+  .footericons {
+    padding: 0 10px 0;
+    font-size: 1.2rem;
+  }
+}
+
+.rowcss {
+  margin: 0 200px 0 200px;
+}
+
+/************************************************ EJS CSS ****************************************************************************************/
+.weatherNavBar {
+  margin-bottom: 0;
+}
+
+.weather {
+  background-image: url("sky.jpg");
+  height: auto; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  text-align: center;
+  color: rgb(73, 62, 62);
+  padding-top: 40px;
+
+}
+
+.weatherRes{
+  background-image: url("weatherRes.jpg");
+  height: auto; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  text-align: center;
+  color: rgb(45, 44, 51);
+  padding-top: 40px;
+}
+
+
+.weatherFormDiv{
+  margin-top: 40px;
+  padding-bottom: 90px;
+}
+
+.weatherClock {
+  min-width: 200px;
+  max-width: 200px;
+  min-height: 150px;
+  max-height: 150px;
+}
+
+.weatherD {
+  font-size: 1rem;
+  padding-bottom: 0;
+}
+
+.ejsClock {
+  font-size: 1rem;
+}
+
+.h3Weather {
+  padding-bottom: 20px;
+  font-size: 2.8em;
+}
+
+.pWeather {
+  margin: auto 30px;
+  padding-bottom: 35px;
+  font-size: 1.3rem;
+}
+
+.wIcon {
+  min-width: 150px;
+  min-width: 150px;
+  min-width: 150px;
+  min-width: 150px;
+  padding-bottom: 20px;
+}
+
+.weatherTitle {
+  padding-bottom: 50px;
+  margin: auto 20px;
+}
+
+@media screen and (max-width: 550px) {
+  .weatherTitle {
+    font-size: 1.2rem;
+  }
+}
+
+.input {
+  margin-bottom: 20px;
+}
+
+/****************************************************************CALCULATOR*******************************************************************************/
+.calculator {
+  width: 380px;
+  font-size: 2rem;
+  margin: 100px auto 170px;
+  padding: 5px;
+  border: rgb(1, 1, 3) 2px solid;
+  border-radius: 25px;
+  background-image: linear-gradient(45deg, rgb(58, 60, 75), #36385c);
+  box-shadow: 30px 30px 20px rgb(87, 111, 190);
+}
+
+@media screen and (max-width:450px) {
+  .calculator {
+    width: 90%;
+    font-size: 1rem;
+    margin: 40px auto 150px;
+  }
+}
+
+.calcButtons {
+  padding: 10px;
+  width: 21%;
+  border-radius: 20%;
+  margin: 3px 3px;
+  background-image: linear-gradient(45deg, rgb(66, 69, 100), #222769);
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  box-shadow: 5px 5px 5px #222331;
+}
+
+.calcButtons:hover {
+  background-image: linear-gradient(-45deg, rgb(66, 69, 100), #222769);
+  background-color: #6b70b1;
+}
+
+.calcButtons:active {
+  background-color: #6b70b1;
+  transform: translateY(4px);
+}
+
+.equal {
+  width: 46%;
+}
+
+.displayCalc {
+  min-height: 140px;
+  text-align: right;
+  border-radius: 25px;
+  background-color: rgb(230, 230, 230);
+  border: rgb(1, 1, 3) 2px solid;
+  width: 100%;
+  margin: 10px auto 40px;
+  box-shadow: 1px 1px 10px 3px rgb(101, 146, 173) inset;
+  padding: 7px 15px 0 0;
+  overflow: hidden;
+}
+.dispCalc1{
+  font-size: 1.3rem;
+  color: rgb(100, 93, 93);
+}
+.dispCalc2{
+  font-size: 2rem;
+}
+.upperButtonDiv{
+  padding-bottom: 25px;
+}
+@media screen and (max-width: 400px){
+  .dispCalc2{
+    font-size: 1.5rem;
+  }
+  .displayCalc{
+    min-height: 125px;
+    margin: 10px auto 20px;
+
+  }
+  .dispCalc1{
+    font-size: 1.1rem;
+  }
+  .upperButtonDiv{
+    padding-bottom: 10px;
+
+  }
+}
+
+.contBorder {
+  padding: 3px;
+  border: solid 2px;
+  background-image: linear-gradient(45deg, rgb(95, 97, 121), #303368);
+  border-radius: 25px;
+}
+
+.pressed {
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.2;
+  transition: all 0.4s;
+}
+
+.topButtons{
+  font-size: 40%;
+}
+
+
+hr{
+  background-color: rgb(187, 185, 185);
+}

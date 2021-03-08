@@ -1,0 +1,33 @@
+<%- include ('header') -%>
+<section class="weather">
+    <div class=" weatherClock analog-clock container-fluid">
+        <canvas class=" container-fluid" id="canvas2" width="700" height="700" >
+        </canvas>
+    </div>
+    <div class="ejsClock container-fluid digitalClock" id='digitalClock'></div>
+
+    <div class="weatherD clock container-fluid">
+
+    </div>
+    <div class="weatherFormDiv">
+
+        <h3 class="weatherTitle">Choose the city you would like to see the current weather for:</h3>
+
+        <form class='weatherForm' action="/weather" method="post">
+
+            <input class="input" id="cityName" type="text" name="city" required autofocus><br>
+            <!-- might add options such as temperature units and so on. -->
+
+
+            <button class="btnSw btnGo" type="submit">Go</button>
+        </form>
+
+
+    </div>
+
+
+
+</section>
+
+
+<%- include ('footer') -%>

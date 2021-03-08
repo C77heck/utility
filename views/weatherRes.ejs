@@ -1,0 +1,27 @@
+<%- include ('header') -%>
+<section class="weatherRes">
+    <div class=" weatherClock analog-clock container-fluid">
+        <canvas class=" container-fluid" id="canvas2" width="700" height="700" >
+        </canvas>
+    </div>
+    <div class="ejsClock container-fluid digitalClock" id='digitalClock'></div>
+
+    <div class="weatherD clock container-fluid">
+
+    </div>
+<div>
+
+    
+
+<h2 class="h3Weather"><%= city %></h2>
+<img class="wIcon" src="<%= icon %>" alt="">
+
+<p class="pWeather">The temperature in <%= city %> is <span id="temp"><%= temp %> </span> °C</p>
+<p class="pWeather"><%= description %></p>
+
+</div>
+
+</section>
+
+
+<%- include ('footer') -%>

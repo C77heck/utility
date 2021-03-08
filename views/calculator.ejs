@@ -1,0 +1,58 @@
+<%- include ('header') -%>
+
+
+
+
+<div class="container-fluid calculator">
+    <div class="contBorder">
+        <div class="displayCalc" >
+            <p class="dispCalc1">0</p>
+            <hr>
+            <p class="dispCalc2"></p>
+
+
+        </div>
+
+
+        <div class="upperButtonDiv">
+            <button class="calcButtons topButtons" onclick="clearIt()" id="reset">Reset</button>
+            <button class="calcButtons topButtons" onclick="round()" id="round">Round</button>
+            <button class="calcButtons topButtons" onclick="pow()" id="pow">pow</button>
+            <button class="calcButtons topButtons" onclick="square()" id="square">√a</button>
+
+        </div>
+
+
+
+        <div class="calcButtDiv">
+
+            <button class="calcButtons buttons" id="7" value="7">7</button>
+            <button class="calcButtons buttons" id="8" value="8">8</button>
+            <button class="calcButtons buttons" id="9" value="9">9</button>
+            <button class="calcButtons buttons del">CE</button>
+            <button class="calcButtons buttons" id="4" value="4">4</button>
+            <button class="calcButtons buttons" id="5" value="5">5</button>
+            <button class="calcButtons buttons" id="6" value="6">6</button>
+            <button class="calcButtons buttons" id="÷" value="÷">÷</button>
+            <button class="calcButtons buttons" id="1" value="1">1</button>
+            <button class="calcButtons buttons" id="2" value="2">2</button>
+            <button class="calcButtons buttons" id="3" value="3">3</button>
+            <button class="calcButtons buttons" id="*" value="*">*</button>
+            <button class="calcButtons buttons" id="0" value="0">0</button>
+            <button class="calcButtons buttons" id="." value=".">.</button>
+            <button class="calcButtons buttons" id="-" value="-">-</button>
+            <button class="calcButtons buttons" id="+" value="+">+</button>
+            <button class="calcButtons buttons" id="(" value="(">(</button>
+            <button class="calcButtons buttons" id=")" value=")">)</button>
+            <button class="calcButtons buttons equal enter" id="=">=</button>
+
+        </div>
+    </div>
+    <!-- </form>
+ -->
+</div>
+</div>
+
+
+
+<%- include ('footer') -%>

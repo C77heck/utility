@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="">
+  <title>Online Clock</title>
+  <meta name="description" content="Digital and analog online clock with current weather checks and calculator ">
+  <meta name="keywords"
+    content="calculator  weather forecast free online real time digital and analog clock with seconds full screen and with large digits 12h 24h">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170092760-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-170092760-1');
+  </script>
+  <script>
+    window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+  <section class="navBar">
+
+    <nav class="navbar navbar-expand-lg ">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fas fa-align-justify"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <!-- create an alarm mechanism with audio -->
+            <a class="nav-link modals" href='/'>Home</a>
+          </li>
+          <li class="nav-item">
+            <!-- create an alarm mechanism with audio -->
+            <a class="nav-link modals" id="modal" href="#">@Reminder</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link modals" id="modal2" href="#">Stopwatch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link modals" id="modal3" href="#">
+              <i class="flag-bfh-ES"></i> Timer
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <!-- use api -->
+            <a class="nav-link modals" id="modal4" href="#fnct">
+              <nobr><i class="flag-bfh-ES"></i> Sign</nobr> Up
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/calculator">Calculator</a>
+          </li>
+
+
+          <li class="nav-item active">
+            <!-- set up a little indroductory html under the clock -->
+            <a class="nav-link modals" id="modal5" href="/weather">Weather <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+
+
+
+
+    <div class="setAlarm">
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div>
+            <span class="close">&times;</span>
+          </div>
+          <span class="titleM">Set Alert</span>
+
+
+          <!-- Alert message -->
+          <form action="/" method="post">
+
+
+            <label for="name2">Name:</label><br>
+            <input type="text" class="setClock" id="name2" name="firstName" autocomplete="on" required autofocus
+              maxlength="50"><br>
+            <label for="emailGiven2">Email Address:</label><br>
+            <input type="email" name="email" id="emailGiven2" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              class="setClock" autocomplete="on" required maxlength="60"><br>
+
+
+
+
+
+            <label class="msgLabel" for="quantity">Alert Message:</label>
+            <input class="setClock" type="text" id="quantity2" name="message"><br>
+            <label class="msgLabel" for="quantity">Date:</label><br>
+            <input class="dateInput" type="date" id="date" name="date"><br>
+            <label class="msgLabel" for="time">Time:</label><br>
+            <input class="timeInput" type="time" id="appt2" name="appt"><br>
+            <button class="btnSw btnGo" type="submit">Go</button>
+
+          </form>
+        </div>
+        <!-- email alert to figure with node js -->
+      </div>
+
+
+
+      <div class="stopWatch container-fluid">
+
+        <!-- The Modal -->
+        <div id="myModal2" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content modal-mobile">
+            <div>
+              <span class="close">&times;</span>
+            </div>
+            <span class="titleM">Stopwatch</span>
+
+
+
+            <div class="container">
+              <button class="btnSw btnStart" type="button" id="start" name="start">Start</button>
+              <button class="btnSw btnLap" type="button" id="lap" name="lap">Lap</button>
+              <button class="btnSw btnStop" type="button" id="stop" name="stop">Stop</button>
+              <button class="btnSw btnReset" type="button" id="reset" name="reset">Reset</button>
+
+            </div>
+            <div class="container">
+              <input type="button" class="display" id="display" name="display" value='00: 00: 00'>
+              <input type="button" class="display2" id="display2" name="display2" value='.00'>
+
+
+
+            </div>
+            <div id="counter">
+              <div id='displayT'></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+      <div class="countdownTimer">
+
+        <!-- The Modal -->
+        <div id="myModal3" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content ">
+            <div>
+              <span class="close">&times;</span>
+            </div>
+            <span class="titleM">Countdown Timer</span>
+
+
+            <div class="container timerButtonContainer">
+              <button class="btnAlert timerBs countButton" type="button" id="go" name="go">Go</button>
+              <button class="btnAlert timerBs stopB" type="button" id="stopIt" name="stopIt">Stop</button>
+              <button class="btnAlert timerBs resetB" type="button" id="resetCountD" name="stopIt">Reset</button>
+            </div>
+            <div class="container">
+              <input type="text" class="countdownInput" id="hr" maxlength="2" name="display" value='00'>
+              <span class="spanCountd">:</span>
+              <input type="text" class="countdownInput" id="me" maxlength="2" name="display" value='00'>
+              <span class="spanCountd">:</span>
+              <input type="text" class="countdownInput" id="sd" maxlength="2" name="display" value='00'>
+
+
+
+
+            </div>
+
+            <!-- needs three inputs suitable. then catch each into a variable. then we need a a function that runs down per second and will affect the minute and the hour as well. should be front end i believe
+         -->
+          </div>
+          <!-- need to resize correctly. review the tabs opened about jquery. figure how we could make different requests from server. and check how we could actually make an email alert response.  -->
+        </div>
+
+      </div>
+
+      <div id="myModal4" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content modal4">
+          <div>
+            <span class="close">&times;</span>
+          </div>
+
+
+          <div class="iFrame ">
+            <iframe class="signUp" name="signUp" src="https://agile-citadel-63419.herokuapp.com/">
+            </iframe>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+  </section>
+  <section>
+    <div class=" analog-clock container-fluid">
+      <canvas class=" container-fluid" id="canvas" width="700" height="700" style="background-color:#f5f5f5">
+      </canvas>
+    </div>
+    <div class="container-fluid digitalClock" id='digitalClock'></div>
+
+    <div class="clock container-fluid">
+
+    </div>
+  </section>
+
+
+
+
+
+
+  <section id="footer">
+
+
+
+
+    <div class="icon-cont container-fluid">
+      <a class="footericons" target="_blank" href="https://www.facebook.com/"><i
+          class="social-icon fab fa-facebook-f"></i></a>
+      <a class="footericons" target="_blank" href="https://twitter.com/explore"><i
+          class="social-icon fab fa-twitter"></i></a>
+      <a class="footericons" target="_blank" href="https://www.instagram.com/"><i
+          class="social-icon fab fa-instagram"></i></a>
+      <a class="footericons" target="_blank" href="https://www.linkedin.com/"><i
+          class="social-icon fas fa-envelope"></i></a>
+
+    </div>
+
+
+    <!-- social media icons -->
+
+
+    <div class="row ">
+      <div class="grids col-md-12">
+        <a class="footera" href="#"><span style="white-space: nowrap">Privacy policy</span></a>
+
+      </div>
+      <div class="grids col-md-12 ">
+        <a class="footera" href="#"><span style="white-space: nowrap">FAQ</span></a>
+      </div>
+      <div class="grids col-md-12 ">
+        <a class="footera" href="#"><span style="white-space: nowrap">Terms & conditions</span></a>
+      </div>
+      <div class="grids col-md-12 ">
+        <a class="footera" href="#">About Us</a>
+      </div>
+    </div>
+    </div>
+    <p class="bottomp"><em>Copyright 2020, Auruma Ltd</em></p>
+
+
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script src="app.js" charset="utf-8"></script>
+  <script src="mainClock.js" charset="utf-8"></script>
+
+
+</body>
+
+</html>
